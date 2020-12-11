@@ -22,4 +22,16 @@ export class SpotifyService {
     return obsTracks;
  //Ritorno un observable ai componenti che richiedono il servizio
   }
+
+ getTrack(id: string) {
+    const url = `https://api.spotify.com/v1/tracks/${id}`;
+    const headers = new HttpHeaders({
+      Authorization:
+        'Bearer TUO_AUTH'
+    });
+
+    return this.http.get(url, { headers });
+  }
+
+
 }
